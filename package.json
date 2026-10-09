@@ -1,6 +1,6 @@
 {
   "name": "dsh-web-search-session",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Route DSH web search through the current session's model plus a self-hosted retrieval backend.",
   "type": "module",
   "main": "index.js",
@@ -23,11 +23,11 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/yedaotian/dsh-web-search-session.git"
+    "url": "git+https://github.com/YDT-china/dsh-web-search-session.git"
   },
-  "homepage": "https://github.com/yedaotian/dsh-web-search-session#readme",
+  "homepage": "https://github.com/YDT-china/dsh-web-search-session#readme",
   "bugs": {
-    "url": "https://github.com/yedaotian/dsh-web-search-session/issues"
+    "url": "https://github.com/YDT-china/dsh-web-search-session/issues"
   },
   "engines": {
     "node": ">=20",

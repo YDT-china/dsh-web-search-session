@@ -1,8 +1,9 @@
 import http from 'node:http'
 import fs from 'node:fs'
 import path from 'node:path'
+import os from 'node:os'
 
-const PLUGIN = '/Users/mr.ye/work/11-AI/dsh-web-search-session/index.js'
+const PLUGIN = new URL('./index.js', import.meta.url).href
 const mod = await import(PLUGIN)
 const { apply, Config } = mod
 
@@ -152,7 +153,7 @@ log.length = 0
 
 // ---------- T7: 磁盘上不存在 key ----------
 {
-  const roots = ['/Users/mr.ye/.dsh/storages', '/Users/mr.ye/.dsh/profiles/desktop']
+  const roots = [path.join(os.homedir(), '.dsh/storages'), path.join(os.homedir(), '.dsh/profiles/desktop')]
   const hits = []
   const walk = (dir, depth) => {
     if (depth > 3) return
@@ -186,7 +187,7 @@ log.length = 0
       else if (/settings.*\.json$/i.test(e.name)) settingsFiles.push(full)
     }
   }
-  find('/Users/mr.ye/.dsh', 0)
+  find(path.join(os.homedir(), '.dsh'), 0)
   console.log('# settings-like files on disk: ' + (settingsFiles.join(', ') || '(none)'))
 }
 

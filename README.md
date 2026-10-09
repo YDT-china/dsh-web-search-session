@@ -11,10 +11,18 @@ dsh-cost-meter 账本并归入本会话），再用自建检索后端取回真�
 
 ## 安装
 
+从 npm 安装：
+
+```bash
+dsh plugin add dsh-web-search-session
+```
+
+本地开发安装：
+
 在具备 `plugin_manager` 工具的会话里（PTC 创造模式等），对该目录执行
 `install_bundle`，`target` 为绝对路径：
 
-    /Users/mr.ye/work/11-AI/dsh-web-search-session
+    /path/to/dsh-web-search-session
 
 安装会写入当前 profile（`install_bundle` 自己处理 package.json / patch，别手工改）。
 之后读它返回的 `application` 与 `warnings`：`applied` 才代表生效。

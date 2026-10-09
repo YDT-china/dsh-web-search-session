@@ -1,5 +1,5 @@
-url: https://github.com/yedaotian/dsh-web-search-session
-name: yedaotian/dsh-web-search-session
+url: https://github.com/YDT-china/dsh-web-search-session
+name: YDT-china/dsh-web-search-session
 category: session
 description:
   en: Routes DSH web search through the current session's model and a self-hosted retrieval backend.
