@@ -1,0 +1,27 @@
+# dsh-web-search-session bundle patch
+#
+# 1) 覆盖已存在的 web 行：把搜索提供方切到本插件的 `session`。
+#    Loader 的按 id 覆盖是"整段替换 config，不做深合并"，故 fetchProvider 必须重申。
+# 2) 插入本插件的宿主行。
+- id: web
+  name: '@deepseek-ai/dsh-web'
+  config:
+    searchProvider: session
+    fetchProvider: http
+
+- insert:
+    - id: web-search-session
+      name: dsh-web-search-session
+      config:
+        # 检索数据源：none | searxng | tavily | brave
+        backend: searxng
+        endpoint: http://127.0.0.1:8888
+        apiKeyEnv: ''
+        sessionPlanning: true
+        # 调试：把「规划出的检索词 + 走的路由」和「实际来源数」写进宿主日志
+        debug: true
+        noRoute: official
+        providerId: session
+        officialProviderId: deepseek-official
+        maxQueries: 3
+        maxResults: 8
